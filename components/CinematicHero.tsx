@@ -87,18 +87,21 @@ export function CinematicHero({ photos }: { photos: Photo[] }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 1 }}
         >
-          <p className="label-ultra">Sri Lanka · Weddings & Portraits</p>
-          <h1 className="title-ultra">Lov&apos;Ceylon</h1>
-          <p className="cinematic-hero__tagline">
+          <p className="label-ultra cinematic-hero__label">Sri Lanka · Weddings</p>
+          <h1 className="cinematic-hero__title">Lov&apos;Ceylon</h1>
+          <p className="cinematic-hero__tagline cinematic-hero__tagline--desktop">
             Intimate moments, beautifully frozen — editorial photography rooted in
             the soul of Ceylon.
           </p>
           <div className="cinematic-hero__actions">
-            <Link href="/contact" className="btn-pill">
-              Inquire Now
+            <Link href="/contact" className="btn-pill btn-pill--compact">
+              Inquire
             </Link>
-            <a href={`tel:${SITE.phoneTel}`} className="btn-pill btn-pill--phone">
-              {SITE.phone}
+            <a
+              href={`tel:${SITE.phoneTel}`}
+              className="btn-pill btn-pill--phone btn-pill--compact"
+            >
+              Call
             </a>
           </div>
         </motion.div>
