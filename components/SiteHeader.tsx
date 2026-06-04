@@ -15,6 +15,9 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
+const linksLeft = links.slice(0, 3);
+const linksRight = links.slice(3);
+
 export function SiteHeader({
   variant = "solid",
   minimal = false,
@@ -53,16 +56,25 @@ export function SiteHeader({
       } ${open ? "site-header--menu-open" : ""}`}
     >
       <nav className="site-header__nav">
+        {!minimal && (
+          <ul className="site-header__links nav-desktop nav-left">
+            {linksLeft.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className={pathname === l.href ? "is-active" : ""}>
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+
         <BrandLogo href="/home" size="sm" />
 
         {!minimal && (
-          <ul className="site-header__links nav-desktop">
-            {links.map((l) => (
+          <ul className="site-header__links nav-desktop nav-right">
+            {linksRight.map((l) => (
               <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className={pathname === l.href ? "is-active" : ""}
-                >
+                <Link href={l.href} className={pathname === l.href ? "is-active" : ""}>
                   {l.label}
                 </Link>
               </li>
