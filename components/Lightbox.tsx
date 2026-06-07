@@ -54,7 +54,7 @@ export function Lightbox({ photos, index, onClose, onNavigate }: Props) {
             position: "fixed",
             inset: 0,
             zIndex: 200,
-            background: "rgba(26, 46, 34, 0.92)",
+            background: "rgba(44, 41, 37, 0.92)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

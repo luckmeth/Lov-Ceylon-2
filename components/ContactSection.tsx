@@ -30,7 +30,7 @@ export function ContactSection({ backdrop }: { backdrop?: Photo }) {
             style={{
               position: "absolute",
               inset: 0,
-              background: "rgba(26, 46, 34, 0.72)",
+              background: "rgba(44, 41, 37, 0.72)",
             }}
           />
         </>
