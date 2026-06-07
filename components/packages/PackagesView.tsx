@@ -5,6 +5,7 @@ import {
   PACKAGE_CATEGORIES,
   PACKAGES,
   type PackageCategory,
+  type PackageTier,
 } from "@/lib/packages";
 import { SITE } from "@/lib/site";
 
@@ -15,6 +16,18 @@ function formatPrice(n: number) {
 export function PackagesView({ backdropLabel }: { backdropLabel?: string }) {
   const [category, setCategory] = useState<PackageCategory>("wedding");
   const tiers = PACKAGES[category];
+
+  const categoryLabel =
+    PACKAGE_CATEGORIES.find((c) => c.id === category)?.label ?? "";
+
+  function whatsappLink(tier: PackageTier) {
+    const message =
+      `Hi ${SITE.name}, I'd like to enquire about the ` +
+      `"${tier.name}" ${categoryLabel} package ` +
+      `(${tier.currency} ${formatPrice(tier.price)}). ` +
+      `Could you share more details and availability?`;
+    return `${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
+  }
 
   return (
     <section className="packages-page">
@@ -57,7 +70,7 @@ export function PackagesView({ backdropLabel }: { backdropLabel?: string }) {
               ))}
             </ul>
             <a
-              href={SITE.whatsapp}
+              href={whatsappLink(tier)}
               target="_blank"
               rel="noopener noreferrer"
               className={`package-card__cta ${tier.popular ? "package-card__cta--fill" : ""}`}
