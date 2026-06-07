@@ -6,7 +6,10 @@ import { getAllPhotos } from "@/lib/photos";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Contact | Lov'Ceylon",
+  title: "Contact & Booking",
+  description:
+    "Book your wedding, homecoming or pre-shoot with Lov'Ceylon photography in Colombo, Sri Lanka. Call, email or message us on WhatsApp — we reply within 24 hours.",
+  alternates: { canonical: "/contact" },
 };
 
 export const revalidate = 120;

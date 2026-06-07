@@ -5,7 +5,10 @@ import { PhotoGrid } from "@/components/PhotoGrid";
 import { getAllPhotos, getPhotoGroups, shuffle } from "@/lib/photos";
 
 export const metadata = {
-  title: "Stories | Lov'Ceylon",
+  title: "Wedding Stories & Featured Shoots",
+  description:
+    "Real love stories told through light — featured wedding and couple shoots by Lov'Ceylon photography in Sri Lanka.",
+  alternates: { canonical: "/stories" },
 };
 
 export const revalidate = 120;

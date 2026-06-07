@@ -6,6 +6,12 @@ import {
   Raleway,
 } from "next/font/google";
 import { AppProviders } from "@/components/AppProviders";
+import { SITE } from "@/lib/site";
+import {
+  jsonLdScript,
+  organizationJsonLd,
+  websiteJsonLd,
+} from "@/lib/seo";
 import "./globals.css";
 
 const label = Julius_Sans_One({
@@ -33,9 +39,47 @@ const body = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Lov'Ceylon | Photography",
-  description:
-    "Timeless wedding and portrait photography in Colombo, Sri Lanka — Lov'Ceylon.",
+  metadataBase: new URL(SITE.url),
+  title: {
+    default:
+      "Lov'Ceylon Photography | Wedding & Portrait Photography Sri Lanka",
+    template: "%s | Lov'Ceylon Photography",
+  },
+  description: SITE.description,
+  keywords: [...SITE.keywords],
+  applicationName: SITE.legalName,
+  authors: [{ name: SITE.legalName, url: SITE.url }],
+  creator: SITE.legalName,
+  publisher: SITE.legalName,
+  category: "Photography",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_LK",
+    url: SITE.url,
+    siteName: SITE.legalName,
+    title:
+      "Lov'Ceylon Photography | Wedding & Portrait Photography Sri Lanka",
+    description: SITE.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Lov'Ceylon Photography | Wedding & Portrait Photography Sri Lanka",
+    description: SITE.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: { icon: "/icon.svg" },
 };
 
 export default function RootLayout({
@@ -47,6 +91,8 @@ export default function RootLayout({
       className={`${label.variable} ${display.variable} ${serif.variable} ${body.variable}`}
     >
       <body>
+        <script {...jsonLdScript(organizationJsonLd)} />
+        <script {...jsonLdScript(websiteJsonLd)} />
         <AppProviders>{children}</AppProviders>
       </body>
     </html>

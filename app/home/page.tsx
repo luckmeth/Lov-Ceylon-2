@@ -7,7 +7,10 @@ import Link from "next/link";
 import { getAllPhotos, pickFeatured, shuffle } from "@/lib/photos";
 
 export const metadata = {
-  title: "Home | Lov'Ceylon",
+  title: "Wedding & Portrait Photography in Sri Lanka",
+  description:
+    "Featured frames from Lov'Ceylon — wedding, homecoming and portrait photography across Sri Lanka. View our galleries, packages and prices.",
+  alternates: { canonical: "/home" },
 };
 
 export const revalidate = 120;

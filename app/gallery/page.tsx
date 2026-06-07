@@ -4,7 +4,10 @@ import { PatternStrip } from "@/components/PatternBackdrop";
 import { getAllPhotos } from "@/lib/photos";
 
 export const metadata = {
-  title: "Gallery | Lov'Ceylon",
+  title: "Photo Gallery",
+  description:
+    "The complete Lov'Ceylon photo gallery — every frame from our wedding, homecoming and portrait shoots across Sri Lanka, shown full size.",
+  alternates: { canonical: "/gallery" },
 };
 
 export const revalidate = 120;

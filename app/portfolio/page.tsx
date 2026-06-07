@@ -5,7 +5,10 @@ import { MasonryFrames } from "@/components/MasonryFrames";
 import { getAllPhotos, getPhotoGroups, pickFeatured, shuffle } from "@/lib/photos";
 
 export const metadata = {
-  title: "Portfolio | Lov'Ceylon",
+  title: "Wedding Photography Portfolio",
+  description:
+    "Browse Lov'Ceylon's wedding, portrait and celebration photography portfolio — beautifully frozen moments captured across Sri Lanka.",
+  alternates: { canonical: "/portfolio" },
 };
 
 export const revalidate = 120;
