@@ -13,7 +13,7 @@ export const organizationJsonLd = {
   alternateName: ["Lov Ceylon", "Love Ceylon Photography"],
   url: SITE.url,
   image: `${SITE.url}/opengraph-image`,
-  logo: `${SITE.url}/icon.svg`,
+  logo: `${SITE.url}/icon`,
   description: SITE.description,
   email: SITE.email,
   telephone: SITE.phoneTel,
