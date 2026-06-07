@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect } from "react";
 import { PhotoImage } from "./PhotoImage";
+import { photoAlt } from "@/lib/photos";
 import type { Photo } from "@/lib/types";
 
 type Props = {
@@ -107,7 +108,7 @@ export function Lightbox({ photos, index, onClose, onNavigate }: Props) {
           >
             <PhotoImage
               src={photos[index].url}
-              alt={photos[index].name}
+              alt={photoAlt(photos[index])}
               fill
               fit="contain"
               sizes="100vw"

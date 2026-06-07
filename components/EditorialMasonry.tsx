@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { PhotoImage } from "./PhotoImage";
 import { Lightbox } from "./Lightbox";
+import { photoAlt } from "@/lib/photos";
 import type { Photo } from "@/lib/types";
 
 const spanPatterns = [
@@ -82,7 +83,7 @@ export function EditorialMasonry({
             >
               <PhotoImage
                 src={photo.url}
-                alt={photo.name}
+                alt={photoAlt(photo)}
                 fill
                 sizes="(max-width: 1024px) 50vw, 25vw"
                 style={{ objectFit: "cover" }}

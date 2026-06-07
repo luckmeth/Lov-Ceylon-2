@@ -120,6 +120,28 @@ export async function getPhotoGroups(): Promise<PhotoGroup[]> {
     .sort((a, b) => b.photos.length - a.photos.length);
 }
 
+/**
+ * Descriptive, keyword-rich alt text for a photo — improves Google Images
+ * ranking and accessibility. Derives the subject from the photo's category
+ * (e.g. "wedding", "homecoming") and falls back to a general description.
+ */
+export function photoAlt(photo: Photo): string {
+  const raw = (photo.category ?? "")
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase()
+    // fix known folder misspelling + singularise so alt hits exact keywords
+    // ("wedding photography", "portrait photography")
+    .replace(/potraits?/g, "portrait")
+    .replace(/\b(\w+?)s\b/g, "$1");
+  const generic = !raw || /^gallery$/i.test(raw);
+  const subject = generic
+    ? "Wedding & portrait photography"
+    : `${raw.replace(/\b\w/g, (c) => c.toUpperCase())} photography`;
+  return `${subject} by Lov'Ceylon, Sri Lanka`;
+}
+
 export function pickFeatured(photos: Photo[], count: number): Photo[] {
   if (photos.length === 0) return [];
   if (photos.length <= count) return photos;

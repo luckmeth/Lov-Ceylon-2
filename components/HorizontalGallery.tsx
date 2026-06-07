@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { PhotoImage } from "./PhotoImage";
+import { photoAlt } from "@/lib/photos";
 import type { Photo } from "@/lib/types";
 
 const widths = [320, 420, 280, 500, 360, 440, 300];
@@ -75,7 +76,7 @@ export function HorizontalGallery({
             >
               <PhotoImage
                 src={photo.url}
-                alt={photo.name}
+                alt={photoAlt(photo)}
                 fill
                 fit="contain"
                 sizes={`${w}px`}

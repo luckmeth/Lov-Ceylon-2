@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { AdaptivePhoto } from "./AdaptivePhoto";
 import { Lightbox } from "./Lightbox";
+import { photoAlt } from "@/lib/photos";
 import type { Photo } from "@/lib/types";
 
 export function MasonryFrames({
@@ -47,7 +48,7 @@ export function MasonryFrames({
           >
             <AdaptivePhoto
               src={photo.url}
-              alt={photo.name}
+              alt={photoAlt(photo)}
               onClick={() => setLightbox(i)}
               priority={i < 4}
             />

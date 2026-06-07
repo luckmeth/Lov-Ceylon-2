@@ -1,6 +1,7 @@
 "use client";
 
 import { AdaptivePhoto } from "./AdaptivePhoto";
+import { photoAlt } from "@/lib/photos";
 import type { Photo } from "@/lib/types";
 
 export function PhotoMarquee({ photos }: { photos: Photo[] }) {
@@ -21,7 +22,7 @@ export function PhotoMarquee({ photos }: { photos: Photo[] }) {
       <div className="marquee-track">
         {row.map((photo, i) => (
           <div key={`${photo.id}-${i}`} className="marquee-frame-wrap">
-            <AdaptivePhoto src={photo.url} alt={photo.name} framed />
+            <AdaptivePhoto src={photo.url} alt={photoAlt(photo)} framed />
           </div>
         ))}
       </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { PhotoImage } from "./PhotoImage";
+import { photoAlt } from "@/lib/photos";
 import type { Photo } from "@/lib/types";
 
 export function FullBleedCollage({ photos }: { photos: Photo[] }) {
@@ -33,7 +34,7 @@ export function FullBleedCollage({ photos }: { photos: Photo[] }) {
           className="photo-tile"
           style={{ gridColumn: "1 / 8", gridRow: "1 / 3", position: "relative" }}
         >
-          <PhotoImage src={a.url} alt={a.name} fill sizes="60vw" style={{ objectFit: "cover" }} />
+          <PhotoImage src={a.url} alt={photoAlt(a)} fill sizes="60vw" style={{ objectFit: "cover" }} />
         </motion.div>
       )}
       {b && (
@@ -45,7 +46,7 @@ export function FullBleedCollage({ photos }: { photos: Photo[] }) {
           className="photo-tile"
           style={{ gridColumn: "8 / 13", gridRow: "1 / 2", position: "relative" }}
         >
-          <PhotoImage src={b.url} alt={b.name} fill sizes="40vw" style={{ objectFit: "cover" }} />
+          <PhotoImage src={b.url} alt={photoAlt(b)} fill sizes="40vw" style={{ objectFit: "cover" }} />
         </motion.div>
       )}
       {c && (
@@ -57,7 +58,7 @@ export function FullBleedCollage({ photos }: { photos: Photo[] }) {
           className="photo-tile"
           style={{ gridColumn: "8 / 11", gridRow: "2 / 3", position: "relative" }}
         >
-          <PhotoImage src={c.url} alt={c.name} fill sizes="25vw" style={{ objectFit: "cover" }} />
+          <PhotoImage src={c.url} alt={photoAlt(c)} fill sizes="25vw" style={{ objectFit: "cover" }} />
         </motion.div>
       )}
       {d && (
@@ -69,7 +70,7 @@ export function FullBleedCollage({ photos }: { photos: Photo[] }) {
           className="photo-tile"
           style={{ gridColumn: "11 / 13", gridRow: "2 / 3", position: "relative" }}
         >
-          <PhotoImage src={d.url} alt={d.name} fill sizes="20vw" style={{ objectFit: "cover" }} />
+          <PhotoImage src={d.url} alt={photoAlt(d)} fill sizes="20vw" style={{ objectFit: "cover" }} />
         </motion.div>
       )}
       {e && (
@@ -83,7 +84,7 @@ export function FullBleedCollage({ photos }: { photos: Photo[] }) {
             display: "none",
           }}
         >
-          <PhotoImage src={e.url} alt={e.name} fill sizes="20vw" style={{ objectFit: "cover" }} />
+          <PhotoImage src={e.url} alt={photoAlt(e)} fill sizes="20vw" style={{ objectFit: "cover" }} />
         </motion.div>
       )}
     </section>

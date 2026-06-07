@@ -31,7 +31,11 @@ export function CollectionGrid({ groups }: { groups: PhotoGroup[] }) {
               transition={{ duration: 0.65, delay: (i % 4) * 0.08 }}
             >
               <Link href={`/stories#${group.slug}`} className="collection-grid__link">
-                <AdaptivePhoto src={cover.url} alt={group.title} framed />
+                <AdaptivePhoto
+                  src={cover.url}
+                  alt={`${group.title} — photography by Lov'Ceylon, Sri Lanka`}
+                  framed
+                />
                 <div className="collection-grid__overlay">
                   <h3>{group.title}</h3>
                   <span>{group.photos.length} photographs</span>

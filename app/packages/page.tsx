@@ -1,6 +1,7 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { PackagesView } from "@/components/packages/PackagesView";
-import { jsonLdScript, packagesJsonLd } from "@/lib/seo";
+import { PackagesFaq } from "@/components/packages/PackagesFaq";
+import { faqJsonLd, jsonLdScript, packagesJsonLd } from "@/lib/seo";
 
 export const metadata = {
   title: "Photography Packages & Prices in Sri Lanka",
@@ -13,7 +14,9 @@ export default function PackagesPage() {
   return (
     <PageShell>
       <script {...jsonLdScript(packagesJsonLd)} />
+      <script {...jsonLdScript(faqJsonLd)} />
       <PackagesView backdropLabel="Wedding · Homecoming · Pre-Casual — crafted for every chapter of your celebration." />
+      <PackagesFaq />
     </PageShell>
   );
 }

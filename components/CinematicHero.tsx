@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { SITE } from "@/lib/site";
+import { photoAlt } from "@/lib/photos";
 import type { Photo } from "@/lib/types";
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -66,7 +67,7 @@ export function CinematicHero({ photos }: { photos: Photo[] }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <motion.img
               src={current.url}
-              alt="Lov'Ceylon photography"
+              alt={photoAlt(current)}
               className="cinematic-hero__main"
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}

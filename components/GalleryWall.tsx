@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Lightbox } from "./Lightbox";
 import { PhotoImage } from "./PhotoImage";
+import { photoAlt } from "@/lib/photos";
 import type { Photo } from "@/lib/types";
 
 const WALL_SLOTS: {
@@ -73,7 +74,7 @@ export function GalleryWall({
               >
                 <PhotoImage
                   src={slot.photo.url}
-                  alt={slot.photo.name}
+                  alt={photoAlt(slot.photo)}
                   fill
                   fit="contain"
                   sizes="(max-width: 900px) 50vw, 25vw"

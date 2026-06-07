@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { PhotoImage } from "./PhotoImage";
+import { photoAlt } from "@/lib/photos";
 import type { Photo } from "@/lib/types";
 
 export function HeroShowcase({ photos }: { photos: Photo[] }) {
@@ -41,7 +42,7 @@ export function HeroShowcase({ photos }: { photos: Photo[] }) {
           >
             <PhotoImage
               src={current.url}
-              alt="Lov'Ceylon photography"
+              alt={photoAlt(current)}
               fill
               priority
               sizes="100vw"
@@ -56,7 +57,7 @@ export function HeroShowcase({ photos }: { photos: Photo[] }) {
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(to bottom, rgba(26,46,34,0.25) 0%, rgba(26,46,34,0.55) 70%, rgba(26,46,34,0.75) 100%)",
+            "linear-gradient(to bottom, rgba(44,41,37,0.25) 0%, rgba(44,41,37,0.55) 70%, rgba(44,41,37,0.75) 100%)",
         }}
       />
 
