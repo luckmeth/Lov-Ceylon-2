@@ -79,6 +79,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  verification: {
+    google: "MHU5um-ktE5lzvURNX1op_56jG9SBIi8trOTT-S9N9M",
+  },
   icons: { icon: "/icon.svg" },
 };
 
