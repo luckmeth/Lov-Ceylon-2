@@ -68,6 +68,10 @@ export const metadata: Metadata = {
       "Lov'Ceylon Photography | Wedding & Portrait Photography Sri Lanka",
     description: SITE.description,
   },
+  icons: {
+    icon: [{ url: "/icon", sizes: "48x48", type: "image/png" }],
+    shortcut: "/icon",
+  },
   robots: {
     index: true,
     follow: true,

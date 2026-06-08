@@ -1,7 +1,6 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 
-// 96×96 (multiple of 48) so Google accepts it as a favicon.
-export const size = { width: 96, height: 96 };
+export const size = { width: 48, height: 48 };
 export const contentType = "image/png";
 
 export default function Icon() {
@@ -9,23 +8,28 @@ export default function Icon() {
     (
       <div
         style={{
+          background: "#1a2e22",
           width: "100%",
           height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#2c2925",
-          color: "#c4a574",
-          fontSize: 54,
-          fontFamily: "Georgia, 'Times New Roman', serif",
-          fontWeight: 700,
-          letterSpacing: 2,
-          borderRadius: 18,
+          borderRadius: 6,
         }}
       >
-        LC
+        <span
+          style={{
+            color: "#f7f5f0",
+            fontSize: 18,
+            fontWeight: 400,
+            letterSpacing: 2,
+            fontFamily: "serif",
+          }}
+        >
+          LC
+        </span>
       </div>
     ),
-    { ...size },
+    { ...size }
   );
 }
